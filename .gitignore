@@ -3,8 +3,8 @@
 
 # security keys, env variables
 /certs
-/env/*
-!/env/.env.*.empty
+/envs/*
+!/envs/.env.*.empty
 
 # coverage
 /coverage
