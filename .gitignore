@@ -1,0 +1,21 @@
+# dependencies
+/node_modules
+
+# security keys, env variables
+/certs
+/env/*
+!/env/.env.*.empty
+
+# coverage
+/coverage
+
+# build
+/build
+/public
+
+# logs
+/logs
+*.log*
+
+# IDE
+/.vscode
