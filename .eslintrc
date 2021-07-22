@@ -1,0 +1,67 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "env": { "es6": true, "node": true },
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:security/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:sort-class-members/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "eqeqeq": "error",
+    "prefer-arrow-callback": "error",
+    "no-restricted-properties": [
+      "error",
+      {
+        "object": "describe",
+        "property": "only"
+      },
+      {
+        "object": "it",
+        "property": "only"
+      }
+    ],
+    "@typescript-eslint/lines-between-class-members": [
+      "error", { "exceptAfterSingleLine": true }
+    ],
+    "@typescript-eslint/no-empty-function": [
+      "error", { "allow": ["constructors"] }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always-and-inside-groups",
+        "alphabetize": { "order": "asc" },
+        "groups": [
+          ["object", "builtin", "external"],
+          "internal", ["parent", "sibling", "index"]
+        ]
+      }
+    ],
+    "sort-class-members/sort-class-members": [2, {
+      "order": [
+        "[properties]",
+        "[conventional-private-properties]",
+        "constructor",
+        "[static-methods]",
+        "[arrow-function-properties]",
+        "[conventional-private-methods]"
+      ],
+        "accessorPairPositioning": "getThenSet"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": "typescript"
+  },
+  "ignorePatterns": ["build", "node_modules"]
+}
